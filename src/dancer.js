@@ -19,20 +19,17 @@ var Dancer = function(top, left, timeBetweenSteps) {
 
 Dancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
-  debugger;
   // console.log('outside of setTimeout -this', this);
   // it just schedules the next step
-  /*var context = this;
+  var context = this;
   setTimeout(function(){
     // console.log('inside of setTimeout -this', this);
-    context.step
-  }, context.timeBetweenSteps);*/
+    context.step();    //calling new instance of Dancer's step
+  }, context.timeBetweenSteps);
 
-  // way1. setTimeout(function() {
-    //func()
-  // }, ms);
 
-  setTimeout(this.step.bind(this, arguments), this.timeBetweenSteps)
+//  setTimeout(this.step.bind(this), this.timeBetweenSteps)
+// -- losing the first bind
 };
 
 Dancer.prototype.setPosition = function(top, left) {
