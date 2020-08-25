@@ -2,6 +2,7 @@
 var lineUp = function() {
   // get the list of dancers
   // iterate over list
+  // call lineUp on each element
 
   // debugger;
   for (let i = 0; i < window.dancers.length; i++) {
@@ -10,6 +11,5 @@ var lineUp = function() {
   // window.dancers.forEach(element =>
   //   element.lineUp();
   // )
-  // call lineUp on each element
 
 };

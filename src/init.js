@@ -21,13 +21,14 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-    // debugger;
+    debugger;
     // var dancer = dancerMakerFunction(
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    // dancer = BlinkyDancer {top: 235.34098625830157, left: 232.0057069907799, timeBetweenSteps: 390.3637902821753, $node: init(1)}, dancerMakerFunction = ƒ
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
