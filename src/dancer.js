@@ -1,7 +1,7 @@
 // Creates and returns a new dancer object that can step
 var Dancer = function(top, left, timeBetweenSteps) {
   // var dancer = {};
-
+  debugger;
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
@@ -17,12 +17,18 @@ var Dancer = function(top, left, timeBetweenSteps) {
   // return dancer;
 };
 
+// lineup method for all dancers
+// Dancer.prototype.lineUp = function() {
+//   this.setPosition(650, this.left);
+//   //this.top = 650;
+// }
+
 Dancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // console.log('outside of setTimeout -this', this);
   // it just schedules the next step
   var context = this;
-  setTimeout(function(){
+  setTimeout(function() {
     // console.log('inside of setTimeout -this', this);
     context.step();    //calling new instance of Dancer's step
   }, context.timeBetweenSteps);

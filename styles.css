@@ -4,6 +4,8 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image: url('asset/background.jpg');
+  background-size: 100%;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -24,4 +26,47 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.shiba {
+  border: none;
+  border-radius: none;
+  width: 150px;
+  height: 150px;
+  content: url('asset/shiba.gif');
+}
+
+.crab {
+  border: none;
+  border-radius: none;
+  /* chrome color filter */
+
+  width: 200px;
+  height: 200px;
+  content: url('https://cutewallpaper.org/21/crab-rave-video-download/Excited-Dance-Sticker-by-TheRealCornelius-for-iOS-and-Android-.gif');
+}
+
+.spin {
+  border: none;
+  border-radius: none;
+  width: 200px;
+  height: 200px;
+  /* background-color: 'yellow' */
+  /* background-image: url('asset/jenny.png'); */
+  /* background-image: url('asset/jenny.png'/100/100); */
+  content: url('asset/jenny.png');
+
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
