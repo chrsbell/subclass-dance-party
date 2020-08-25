@@ -1,6 +1,15 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  // click callback for lineUp button
+  $('.lineUpButton').on('click', function(event) {
+    debugger;
+    // get the name of the callback function from dancefloor.html and call it
+    var lineUpFunctionName = $(this).data('dancer-maker-function-name');
+    var lineUpFunction = window[lineUpFunctionName]; //window.lineUp / lineUp function in lineUp.js
+    lineUpFunction();
+  });
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -21,7 +30,7 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-    debugger;
+    // debugger;
     // var dancer = dancerMakerFunction(
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),

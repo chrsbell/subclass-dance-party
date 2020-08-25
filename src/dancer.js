@@ -18,8 +18,9 @@ var Dancer = function(top, left, timeBetweenSteps) {
 
 };
 
-Dancer.prototype.lineUp = function() {
-  this.setPosition(500, this.left);
+// evenly line up this dancer at a fixed y position
+Dancer.prototype.lineUpDancer = function(left) {
+  this.setPosition(500, left);
   //this.top = 650;
 };
 

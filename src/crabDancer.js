@@ -1,6 +1,6 @@
-var ChrisDancer = function(top, left, timeBetweenSteps) {
+var CrabDancer = function(top, left, timeBetweenSteps) {
   // var blinkyDancer = Dancer(top, left, timeBetweenSteps);
-  debugger;
+  // debugger;
   Dancer.call(this, top, left, timeBetweenSteps);
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -9,23 +9,40 @@ var ChrisDancer = function(top, left, timeBetweenSteps) {
 
   // return blinkyDancer;
   this.$node.addClass('crab');
-  this.rotation = 0;
-  this.increment = (Math.random() * 10) + 10;
+
+  // the hue rotation of the dancer, from 0-360
+  this.hueRotation = 0;
+
+  // speed at which the dancer changes hue
+  this.flashSpeed = (Math.random() * 10) + 10;
+
+  // direction to move in, in radians
+  this.direction = 0;
+
 };
 
-ChrisDancer.prototype = Object.create(Dancer.prototype);
-ChrisDancer.prototype.constructor = ChrisDancer;
+CrabDancer.prototype = Object.create(Dancer.prototype);
+CrabDancer.prototype.constructor = CrabDancer;
 
 // changing crab color
-ChrisDancer.prototype.updateColor = function() {
+CrabDancer.prototype.updateColor = function() {
 
-  this.rotation = (this.rotation + this.increment) % 360;
-  var cssValue = 'hue-rotate(' + this.rotation + 'deg)';
+  this.hueRotation = (this.hueRotation + this.flashSpeed) % 360;
+  var cssValue = 'hue-rotate(' + this.hueRotation + 'deg)';
   // debugger;
   this.$node.css('-webkit-filter', cssValue);
 };
 
-ChrisDancer.prototype.step = function() {
+// move the crab
+CrabDancer.prototype.move = function() {
+  var x = Math.sin(direction);
+  var y = Math.cos(direction);
+  this.top += y;
+  this.left += x;
+  this.set
+};
+
+CrabDancer.prototype.step = function() {
   this.updateColor();
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this);

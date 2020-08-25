@@ -1,11 +1,10 @@
 // spinning dancer
 var JennySpinDancer = function(top, left, timeBetweenSteps) {
-  // var blinkyDancer = Dancer(top, left, timeBetweenSteps);
 
   Dancer.call(this, top, left, timeBetweenSteps);
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
-    // this.$node = $('<img src="src/asset/background1.jpeg" class="spin">');
+  // this.$node = $('<img src="src/asset/background1.jpeg" class="spin">');
   this.$node.addClass('spin');
 
 };
