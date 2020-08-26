@@ -1,14 +1,6 @@
 var CrabDancer = function(top, left, timeBetweenSteps) {
   // var blinkyDancer = Dancer(top, left, timeBetweenSteps);
   // debugger;
-  Dancer.call(this, top, left, timeBetweenSteps);
-  // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
-  // so we must keep a copy of the old version of this function
-
-  // this.oldStep = BlinkyDancer.step;
-
-  // return blinkyDancer;
-  this.$node.addClass('crab');
 
   // the hue rotation of the dancer, from 0-360
   this.hueRotation = 0;
@@ -17,7 +9,17 @@ var CrabDancer = function(top, left, timeBetweenSteps) {
   this.flashSpeed = (Math.random() * 10) + 10;
 
   // direction to move in, in radians
-  this.direction = 0;
+  this.direction = Math.random() * 2 * Math.PI;
+  this.speed = 20;
+
+  Dancer.call(this, top, left, timeBetweenSteps);
+  // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
+  // so we must keep a copy of the old version of this function
+
+  // this.oldStep = BlinkyDancer.step;
+
+  // return blinkyDancer;
+  this.$node.addClass('crab');
 
 };
 
@@ -35,15 +37,17 @@ CrabDancer.prototype.updateColor = function() {
 
 // move the crab
 CrabDancer.prototype.move = function() {
-  var x = Math.sin(direction);
-  var y = Math.cos(direction);
-  this.top += y;
-  this.left += x;
-  this.set
+  debugger;
+  var x = Math.sin(this.direction);
+  var y = Math.cos(this.direction);
+  this.top += y * this.speed;
+  this.left += x * this.speed;
+  this.setPosition(this.top, this.left);
 };
 
 CrabDancer.prototype.step = function() {
   this.updateColor();
+  // this.move();
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this);
   // toggle() is a jQuery method to show/hide the <span> tag.

@@ -5,7 +5,7 @@ $(document).ready(function() {
   $('.lineUpButton').on('click', function(event) {
     debugger;
     // get the name of the callback function from dancefloor.html and call it
-    var lineUpFunctionName = $(this).data('dancer-maker-function-name');
+    var lineUpFunctionName = $(this).data('callback');
     var lineUpFunction = window[lineUpFunctionName]; //window.lineUp / lineUp function in lineUp.js
     lineUpFunction();
   });

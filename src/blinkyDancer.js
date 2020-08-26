@@ -1,11 +1,10 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
-  // var blinkyDancer = Dancer(top, left, timeBetweenSteps);
 
-  Dancer.call(this, top, left, timeBetweenSteps);
+  Dancer.call(this, top, left, timeBetweenSteps); // this <= blinkydancer
   this.$node.addClass('shiba');
-
 };
-
+// BlinkyDancer.prototype = Dancer.prototype; //WRONG
+// BlinkyDancer.prototype = new Dancer(); //WRONG
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
 
