@@ -12,11 +12,11 @@ describe('jennySpinDancer', function() {
     expect(jennySpinDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(jennySpinDancer.$node, 'toggle');
-    jennySpinDancer.step();
-    expect(jennySpinDancer.$node.toggle.called).to.be.true;
-  });
+  // it('should have a step function that makes its node blink', function() {
+  //   sinon.spy(jennySpinDancer.$node, 'toggle');
+  //   jennySpinDancer.step();
+  //   expect(jennySpinDancer.$node.toggle.called).to.be.true;
+  // });
 
   describe('dance', function() {
     it('should call step at least once per second', function() {

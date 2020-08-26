@@ -12,11 +12,11 @@ describe('crabDancer', function() {
     expect(crabDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(crabDancer.$node, 'toggle');
-    crabDancer.step();
-    expect(crabDancer.$node.toggle.called).to.be.true;
-  });
+  // xit('should have a step function that makes its node blink', function() {
+  //   sinon.spy(crabDancer.$node, 'toggle');
+  //   crabDancer.step();
+  //   expect(crabDancer.$node.toggle.called).to.be.true;
+  // });
 
   describe('dance', function() {
     it('should call step at least once per second', function() {
